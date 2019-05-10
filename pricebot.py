@@ -62,9 +62,7 @@ def btc(bot, update):
 		emoji_last_year = "\U00002600"
 	else:
 		emoji_last_year = "\U00002614"
-	custom_keyboard = ['REFRESH']
-	reply_markup = ReplyKeyboardMarkup(custom_keyboard)
-	bot.send_message(chat_id=update.message.chat_id, text="BTC   $"+str(price_today)+"\n24h   "+ format(change_yesterday, '.2f')+ "% "+emoji_yesterday+"\n7d     "+ format(change_last_week, '.2f')+ "% "+emoji_last_week+"\n1y     "+ format(change_last_year, '.2f')+ "% "+emoji_last_year, reply_markup=reply_markup)
+	bot.send_message(chat_id=update.message.chat_id, text="BTC   $"+str(price_today)+"\n24h   "+ format(change_yesterday, '.2f')+ "% "+emoji_yesterday+"\n7d     "+ format(change_last_week, '.2f')+ "% "+emoji_last_week+"\n1y     "+ format(change_last_year, '.2f')+ "% "+emoji_last_year)
 	
 	
 btc_handler = CommandHandler('btc', btc)
