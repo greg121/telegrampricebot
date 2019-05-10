@@ -62,7 +62,12 @@ def btc(bot, update):
 	else:
 		emoji_last_year = "\U00002614"
 	bot.send_message(chat_id=update.message.chat_id, text="BTC   $"+str(price_today)+"\n24h   "+ format(change_yesterday, '.2f')+ "% "+emoji_yesterday+"\n7d     "+ format(change_last_week, '.2f')+ "% "+emoji_last_week+"\n1y     "+ format(change_last_year, '.2f')+ "% "+emoji_last_year)
-
+	custom_keyboard = [['top-left', 'top-right'], 
+                   ['bottom-left', 'bottom-right']]
+	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+	bot.send_message(chat_id=chat_id, text="Custom Keyboard Test", reply_markup=reply_markup)
+	
+	
 btc_handler = CommandHandler('btc', btc)
 dispatcher.add_handler(btc_handler)
 
