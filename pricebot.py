@@ -65,7 +65,7 @@ def btc(bot, update):
 	custom_keyboard = [['top-left', 'top-right'], 
                    ['bottom-left', 'bottom-right']]
 	reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
-	bot.send_message(chat_id=chat_id, text="Custom Keyboard Test", reply_markup=reply_markup)
+	bot.send_message(chat_id=update.message.chat_id, text="Custom Keyboard Test", reply_markup=reply_markup)
 	
 	
 btc_handler = CommandHandler('btc', btc)
